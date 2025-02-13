@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-/* Script 4, my first C program */
+/**
+ * main - Prints a message
+ * Return: Returns the value 0 (Exit without errors)
+ */
 
 int main(void)
 {
