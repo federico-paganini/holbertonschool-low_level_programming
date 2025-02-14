@@ -13,3 +13,5 @@ Programs functionalities detail.
 5-print_numbers.c > Prints all single digit numbers of base 10 starting from 0.
 
 6-print_numberz.c > Prints all single digit numbers of base 10 starting from 0 using putchar function and int variable.
+
+7-print_tebahpla.c > Prints the lowercase alphabet in reverse.
