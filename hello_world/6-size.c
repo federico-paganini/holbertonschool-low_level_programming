@@ -7,10 +7,10 @@
 
 int main(void)
 {
-	int c;
-	long int n;
-	long long int nl;
-	char nlg;
+	char c;
+	int n;
+	long nl;
+	long long int nlg;
 	float nf;
 
 	printf("Size of a char: %u byte(s)\n", sizeof(c));
