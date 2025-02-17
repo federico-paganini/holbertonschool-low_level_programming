@@ -21,3 +21,7 @@ Programs functionalities detail.
 9-print_comb.c > Prints all possible combinations of single-digit numbers.
 
 100-print_comb3.c > Prints all possible different combinations of two digits.
+
+101-print_comb4.c > Prints all possible different combinations of three digits.
+
+101-print_comb4.c > Prints all possible different combinations of three digits.
