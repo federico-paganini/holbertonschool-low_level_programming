@@ -8,10 +8,11 @@
 
 void print_alphabet(void)
 {
-	int ascii = 97;
+	int ascii;
 
-	for (ascii; ascii <= 122; ascii++)
+	for (ascii = 97; ascii <= 122; ascii++)
 	{
 		_putchar(ascii);
 	}
+	_putchar('\n');
 }
