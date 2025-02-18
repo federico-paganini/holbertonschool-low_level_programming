@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_alphabet - Calls the function to print alphabet.
  *
