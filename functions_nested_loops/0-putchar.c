@@ -9,10 +9,10 @@
 
 int main(void)
 {
-	char text[] = "_putchar";
-	size_t length = sizeof(text) / sizeof(text[0];
+	char text[9] = "_putchar\n";
+	int i;
 
-	for (int i = 0; i < length; i++)
+	for (i = 0; i < 9; i++)
 	{
 		_putchar(text[i]);
 	}
