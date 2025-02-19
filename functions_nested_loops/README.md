@@ -1,4 +1,4 @@
-Program functionalities descrpition.
+Program and functions functionalities descrpition.
 
 0-putchar.c > Write a program that prints _putchar, followed by a new line.
 
@@ -11,3 +11,5 @@ Program functionalities descrpition.
 4-islower.c > Checks for a alphabetic character.
 
 5-sign.c > Prints the sign of a number.
+
+6-abs.c > Returns the absolute value of an integer.
