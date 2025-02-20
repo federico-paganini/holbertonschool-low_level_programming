@@ -17,3 +17,5 @@ Program and functions functionalities descrpition.
 7-print_last_digit.c > Prints the last digit of a number.
 
 8-24_hours.c > Prints every minute of the day.
+
+9-times_table.c > Prints the 9 times table.
