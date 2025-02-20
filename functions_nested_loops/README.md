@@ -19,3 +19,7 @@ Program and functions functionalities descrpition.
 8-24_hours.c > Prints every minute of the day.
 
 9-times_table.c > Prints the 9 times table.
+
+10-add.c > Adds two integers and returns the result.
+
+11-print_to_98.c > Prints all numbers from n (Passed to the function) to 98.
