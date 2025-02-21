@@ -9,10 +9,10 @@
 int main(void)
 {
 	int i;
-	long long int prev = 1;
-	long long int numb = 2;
-	long long int pairsum = 2;
-	long long int sum = 0;
+	long int prev = 1;
+	long int numb = 2;
+	long int pairsum = 2;
+	long int sum = 0;
 
 	do {
 		sum = (prev + numb);
@@ -26,6 +26,6 @@ int main(void)
 		numb = sum;
 	} while (sum < 4000000);
 
-	printf("%lld\n", pairsum);
+	printf("%ld\n", pairsum);
 	return (0);
 }
