@@ -8,7 +8,6 @@
 
 int main(void)
 {
-	int i;
 	long int prev = 1;
 	long int numb = 2;
 	long int pairsum = 2;
