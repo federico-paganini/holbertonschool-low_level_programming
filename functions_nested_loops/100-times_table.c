@@ -16,6 +16,7 @@ void print_times_table(int n)
 		for (j = 0; j <= n; j++)
 		{
 			int result = (i * j);
+
 			if (result >= 1000)
 			{
 				_putchar('0' + (result / 1000));
@@ -42,14 +43,21 @@ void print_times_table(int n)
 					}
 					else
 					{
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-						_putchar('0' + result);
+						if (j == 0)
+						{
+							_putchar('0' + result);
+						}
+						else
+						{
+							_putchar(' ');
+							_putchar(' ');
+							_putchar(' ');
+							_putchar('0' + result);
+						}
 					}
 				}
 			}
-			if (j == n) 
+			if (j == n)
 			{
 				_putchar('\n');
 			}
