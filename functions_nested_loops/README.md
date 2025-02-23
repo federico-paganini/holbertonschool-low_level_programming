@@ -23,3 +23,13 @@ Program and functions functionalities descrpition.
 10-add.c > Adds two integers and returns the result.
 
 11-print_to_98.c > Prints all numbers from n (Passed to the function) to 98.
+
+100-times_table.c > Prints the n times table.
+
+101-natural.c > Computes and prints the sum of all the multiples of 3 or 5 below 1024 (excluded), followed by a new line.
+
+102-fibonacci.c > Prints the first 50 Fibonacci numbers.
+
+103-fibonacci.c > Finds and prints the sum of the even-valued terms of Fibonacci sequence under 4.000.000.
+
+104-fibonacci.c > Finds and prints the first 98 Fibonacci numbers.
