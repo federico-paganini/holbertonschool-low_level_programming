@@ -6,7 +6,7 @@
  * Return: Returns 0 (Exit without errors).
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -44,4 +44,6 @@ void main(void)
 			putchar('\n');
 		}
 	}
+
+	return (0);
 }
