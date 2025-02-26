@@ -4,6 +4,13 @@
 
 #define PASSWORD_LENGTH 6
 
+/**
+ * generate_password - Generates a random password.
+ *
+ * @password: Array to generate password.
+ * @length: Length of the passowrd.
+ */
+
 void generate_password(char *password, int length) {
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
@@ -13,6 +20,8 @@ void generate_password(char *password, int length) {
 
     password[length] = '\0';
 }
+
+/
 
 int main() {
 
