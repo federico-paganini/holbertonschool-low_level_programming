@@ -46,7 +46,7 @@ int main(void)
 
 	generate_password(password);
 
-	printf("%s\n", password);
+	printf("%s", password);
 
 	return (0);
 }
