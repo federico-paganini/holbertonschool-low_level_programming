@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 6
-
 /**
  * generate_password - Generates a random password.
  *
@@ -12,15 +10,28 @@
 
 void generate_password(char *password)
 {
+	const char charset[] =
+		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	int charset_size = sizeof(charset) - 1;
 	int sum = 0, i = 0;
 
 	srand((unsigned int)time(NULL));
 
+	while (sum < 2651)
+	{
+		int random_index = rand() % charset_size;
+		int random_char = charset[random_index];
+
+		password[i++] = (char)random_char;
+		sum += random_char;
+	}
+
 	while (sum < 2772)
 	{
-		int random_char = (rand() % (32 - 127)) + 32;
+		int random_index = rand() % charset_size;
+		int random_char = charset[random_index];
 
-		if (sum + random_char > 2772)
+		if (sum + random_char != 2772)
 		{
 			random_char = 2772 - sum;
 			if (random_char < 32 || random_char > 126)
