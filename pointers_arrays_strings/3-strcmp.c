@@ -5,7 +5,8 @@
  *
  * @s1: First string to compare.
  * @s2: Second string to compare.
- * Retrun: Returns te comparison result.
+ *
+ * Return: Returns te comparison result.
  */
 
 int _strcmp(char *s1, char *s2)
