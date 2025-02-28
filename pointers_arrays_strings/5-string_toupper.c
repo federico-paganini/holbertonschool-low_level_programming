@@ -3,7 +3,7 @@
 /**
  * string_toupper(char *);
  *
- * @*: Pointer to the string to change.
+ * @str: Pointer to the string to change.
  *
  * Return: Returns the letter in uppercase.
  */
