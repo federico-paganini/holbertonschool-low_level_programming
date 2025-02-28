@@ -10,7 +10,7 @@
 
 char *leet(char *cptrStr)
 {
-	int i;
+	int i = 0;
 
 	while (cptrStr[i] != '\0')
 	{
