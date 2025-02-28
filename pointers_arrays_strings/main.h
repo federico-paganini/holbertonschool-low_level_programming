@@ -1,19 +1,20 @@
 /* Functions prototypes */
 
 int _putchar(char);
-void reset_to_98(int *n);
-void swap_int(int *a, int *b);
-int _strlen(char *s);
-void _puts(char *str);
-void print_rev(char *s);
-void rev_string(char *s);
-void puts2(char *str);
-void puts_half(char *str);
-void print_array(int *a, int);
-char *_strcpy(char *dest, char *src);
-int _atoi(char *s);
-char *_strcat(char *dest, char *src);
-char *_strncat(char *dest, char *src, int n);
-char *_strncpy(char *dest, char *src, int n);
-int _strcmp(char *s1, char *s2);
-void reverse_array(int *a, int);
+void reset_to_98(int *);
+void swap_int(int *, int *);
+int _strlen(char *);
+void _puts(char *);
+void print_rev(char *);
+void rev_string(char *);
+void puts2(char *);
+void puts_half(char *);
+void print_array(int *, int);
+char *_strcpy(char *, char *);
+int _atoi(char *);
+char *_strcat(char *, char *);
+char *_strncat(char *, char *, int);
+char *_strncpy(char *, char *, int);
+int _strcmp(char *, char *);
+void reverse_array(int *, int);
+char *string_toupper(char *);
