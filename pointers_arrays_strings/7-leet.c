@@ -10,31 +10,21 @@
 
 char *leet(char *cptrStr)
 {
-	int i = 0;
+	int j, i = 0;
+	int charset[5] = {'a', 'e', 'o', 't', 'l'};
+	int code[5] = {'4', '3', '0', '7', '1'};
 
 	while (cptrStr[i] != '\0')
 	{
-		char c = cptrStr[i];
-
-		c = (c >= 'A' && c <= 'Z') ? c + 32 : c;
-		switch (c)
+		for (j = 0; j < 5; j++)
 		{
-			case 'a':
-				cptrStr[i] = 4;
-				break;
-			case 'e':
-				cptrStr[i] = 3;
-				break;
-			case 'o':
-				cptrStr[i] = 0;
-				break;
-			case 't':
-				cptrStr[i] = 7;
-				break;
-			case 'l':
-				cptrStr[i] = 1;
-				break;
+			if (cptrStr[i] == charset[j] ||
+					cptrStr[i] == (((charset[j] - '0') - 32) + '0'))
+			{
+				cptrStr[i] = code[j];
+			}
 		}
+		i++;
 	}
 	return (cptrStr);
 }
