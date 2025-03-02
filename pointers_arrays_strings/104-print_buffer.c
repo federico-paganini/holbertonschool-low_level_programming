@@ -25,7 +25,7 @@ void print_buffer(char *b, int size)
 			if (i + j < size)
 				printf("%02x", b[i + j] & 0xFF);
 			else
-				printf(" ");
+				putchar(' ');
 
 			if (j % 2 == 1)
 				putchar(' ');
@@ -39,7 +39,7 @@ void print_buffer(char *b, int size)
 			}
 		}
 		printf(" ");
-		for (j = 0; j < 10; j++)
+		for (j = 0; j < (bytes < 10 ? bytes : 10); j++)
 		{
 			if (i + j < size)
 				printf("%c", (isprint(b[i + j])) ? b[i + j] : '.');
