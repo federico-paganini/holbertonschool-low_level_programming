@@ -4,8 +4,8 @@
 
 /**
  * print_buffer - Prints a buffer.
- * @b: Buffer to print. 
- * @r: Size to print.
+ * @b: Buffer to print.
+ * @size: Size to print.
  */
 
 void print_buffer(char *b, int size)
@@ -17,11 +17,9 @@ void print_buffer(char *b, int size)
 		putchar('\n');
 		return;
 	}
-
 	for (i = 0; i < size; i += 10)
 	{
 		printf("%08x: ", i);
-
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
@@ -32,9 +30,7 @@ void print_buffer(char *b, int size)
 			if (j % 2 == 1)
 				putchar(' ');
 		}
-	
 		bytes = size - i;
-
 		if (bytes < 10)
 		{
 			for (j = bytes; j < 10; j++)
@@ -42,15 +38,12 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			}
 		}
-
 		printf(" ");
-
-		for (j = 0; j < 10 && (i + j) < size; j++)
+		for (j = 0; j < 10; j++)
 		{
+			if (i + j < size)
 				printf("%c", (isprint(b[i + j])) ? b[i + j] : '.');
 		}
-
 		putchar('\n');
 	}
 }
-
