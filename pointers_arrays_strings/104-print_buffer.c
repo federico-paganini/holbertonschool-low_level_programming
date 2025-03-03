@@ -38,7 +38,6 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			}
 		}
-		printf(" ");
 		for (j = 0; j < (bytes < 10 ? bytes : 10); j++)
 		{
 			if (i + j < size)
