@@ -18,7 +18,7 @@ int verify_char(char *charset, char str)
 	while (charset[i] != '\0')
 	{
 		if (charset[i] == str)
-                        return (1);
+			return (1);
 		i++;
 	}
 	return (0);
