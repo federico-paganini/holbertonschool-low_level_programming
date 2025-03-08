@@ -5,8 +5,8 @@
  *
  * @argv: Number of arguments passed to the function.
  * @argc: Arguments passed to the function.
- * 
- * Retrun: Returns 0 (Exit without errors).
+ *
+ * Return: Returns 0 (Exit without errors).
  */
 
 int main(int argv, char **argc)
