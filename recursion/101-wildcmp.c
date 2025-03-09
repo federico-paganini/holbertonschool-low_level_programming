@@ -32,7 +32,8 @@ int wildstr_compare(char *s1, char *s2, int i, int j)
 {
 	if (i > 0 && j > 0 && (s1[i] == s2[j] || s2[j] == '*'))
 	{
-			if (s1[i - 1] == wildstr_letter(s2, j) || wildstr_letter(s2, j) == '*')
+			if ((s1[i] == s2[j] || s2[j] == '*') &&
+						(s1[i - 1] == wildstr_letter(s2, j) || wildstr_letter(s2, j) == '*'))
 				return (wildstr_compare(s1, s2, i - 1, j - 1));
 	}
 	else
@@ -47,7 +48,7 @@ int wildstr_compare(char *s1, char *s2, int i, int j)
 
 int wildcmp(char *s1, char *s2)
 {
-	if (s1[0] == '\0' && (s2[0] == '\0' || s2[0] == '*'))
+	if (s1[0] == '\0' && (s2[0] == '\0' || s2[0] == '*') && wildstr_letter(s2, str_length(s2)) == '*')
 		return (1);
 
 	return(wildstr_compare(s1, s2, str_length(s1) - 1, str_length(s2) - 1));
