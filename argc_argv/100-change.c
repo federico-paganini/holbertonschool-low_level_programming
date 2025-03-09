@@ -15,8 +15,8 @@
 int main(int argc, char **argv)
 {
 	int i;
-	unsigned int cents, ccount = 0;
-	unsigned int coins[5] = {25, 10, 5, 2, 1};
+	int cents, ccount = 0;
+	int coins[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
@@ -26,8 +26,12 @@ int main(int argc, char **argv)
 	else
 	{
 		cents = atoi(argv[1]);
-		if (cents <= 0)
+		if (cents < 0)
+		{
+
 			printf("0\n");
+			return (0);
+		}
 	}
 
 	for (i = 0; i < 5; i++)
