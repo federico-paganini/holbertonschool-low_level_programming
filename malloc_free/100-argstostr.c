@@ -42,6 +42,14 @@ char *argstostr(int ac, char **av)
 	return (concav);
 }
 
+/**
+ * _strlen - Gives the length of a string.
+ *
+ * @str: String to count the length.
+ *
+ * Return: The length of the string.
+ */
+
 int _strlen(char *str)
 {
 	int length = 0;
