@@ -14,7 +14,8 @@
 
 char *argstostr(int ac, char **av)
 {
-	int tlength, i, j, k = 0;
+	int i, j, k = 0;
+	int tlength = 0;
 	char *concav;
 
 	if (ac == 0 || av == NULL)
