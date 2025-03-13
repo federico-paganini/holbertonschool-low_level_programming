@@ -25,6 +25,7 @@ char *argstostr(int ac, char **av)
 	{
 		tlength += _strlen(av[i]) + 1;
 	}
+	tlength++;
 
 	concav = malloc(sizeof(char) * tlength);
 
