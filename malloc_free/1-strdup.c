@@ -14,19 +14,24 @@
 
 char *_strdup(char *str)
 {
-	unsigned int length = _strlen(str);
+	unsigned int length;
 	unsigned int i = 0;
 	char *arr;
 
-	arr = malloc(sizeof(char) * (length + 1));
-
-	if ((str == NULL) || (arr == NULL))
+	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i <= length; i++)
+	length = _strlen(str);
+	arr = malloc(sizeof(char) * (length + 1));
+
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < length; i++)
 	{
 		arr[i] = str[i];
 	}
+	arr[length] = '\n';
 
 	return (arr);
 }
