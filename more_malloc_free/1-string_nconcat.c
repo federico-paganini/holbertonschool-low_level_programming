@@ -17,19 +17,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int extra, length1, length2, i, j = 0;
 
 	if (s1 == NULL)
-		return (NULL);
+	{
+		length1 = 0;
+	}
+	else
+	{
+		length1 = _str_length(s1);
+	}
+
 	if (s2 == NULL)
 	{
 		length2 = 0;
 	}
-
 	else
 	{
 		length2 = _str_length(s2);
 	}
 
 	extra = (n < length2) ? n : length2;
-	length1 = _str_length(s1);
 	concat = malloc(sizeof(char) * (length1 + extra + 1));
 
 	if (concat == NULL)
