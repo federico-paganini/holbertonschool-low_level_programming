@@ -8,7 +8,6 @@
  *
  * Return: 1 if all characters are digits, 0 otherwise.
  */
-
 int is_digit(char *s)
 {
 	while (*s)
@@ -27,11 +26,9 @@ int is_digit(char *s)
  *
  * Return: Length of the string.
  */
-
 int str_length(char *s)
 {
 	int len = 0;
-
 	while (s[len])
 		len++;
 	return (len);
@@ -45,7 +42,6 @@ int str_length(char *s)
  *
  * Return: Pointer to result string (must be freed).
  */
-
 char *multiply(char *num1, char *num2)
 {
 	int len1 = str_length(num1);
@@ -94,7 +90,6 @@ char *multiply(char *num1, char *num2)
  *
  * Return: 0 on success, 98 on error.
  */
-
 int main(int argc, char *argv[])
 {
 	char *result;
