@@ -41,7 +41,7 @@ char **strtow(char *str)
 			return (NULL);
 		}
 		ccount = _charcount(str);
-		for (j = 0; j <= ccount; j++)
+		for (j = 0; j < ccount; j++)
 		{
 			strarr[i][j] = *str;
 			str++;
