@@ -5,24 +5,21 @@
  * strtow - Splits a string into words.
  *
  * @str: String to split.
- * 
+ *
  * Return: NULL if str = NULL or str = "", if the function fails NULL.
  * Exit case, pointer to the new array.
  */
-
-int _wcount(char *);
-int _charcount(char *);
 
 char **strtow(char *str)
 {
 	char **strarr;
 	unsigned int i, j, wcount, ccount;
-	
+
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	wcount = _wcount(str);
 	strarr = malloc(sizeof(char *) * (wcount + 1));
-	if (strarr == NULL)
+	if (strarr == NULL || wcount == 0)
 		return (NULL);
 	for (i = 0; i < wcount; i++)
 	{
@@ -68,7 +65,7 @@ int _wcount(char *str)
 	{
 		while (*str == ' ')
 			str++;
-		
+
 		if (*str != '\0')
 		{
 			i++;
@@ -81,7 +78,7 @@ int _wcount(char *str)
 
 /**
  * _charcount - Counts the letters of the first word in a string.
- * 
+ *
  * @str: String to count letters.
  *
  * Return: The number of letters.

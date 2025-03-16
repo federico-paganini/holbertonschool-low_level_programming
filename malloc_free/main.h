@@ -1,5 +1,7 @@
 /*Functions Prototypes*/
 
+int _wcount(char *);
+int _charcount(char *);
 int _putchar(char);
 int _strlen(char *);
 char *create_array(unsigned int, char);
