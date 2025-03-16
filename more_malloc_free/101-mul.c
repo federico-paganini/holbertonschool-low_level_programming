@@ -4,37 +4,37 @@
 /**
  * is_digit - Checks if a string consists only of digits.
  *
- * @str: The string to check.
+ * @s: The string to check.
  *
  * Return: 1 if all characters are digits, 0 otherwise.
  */
 
-int is_digit(char *str)
+int is_digit(char *s)
 {
-	while (*str)
+	while (*s)
 	{
-		if (*str < '0' || *str > '9')
+		if (*s < '0' || *s > '9')
 			return (0);
-		str++;
+		s++;
 	}
 	return (1);
 }
 
 /**
- * _strlen - Returns the length of a string.
+ * str_length - Returns the length of a string.
  *
- * @str: The input string.
+ * @s: The input string.
  *
  * Return: Length of the string.
  */
 
-int _strlen(char *str)
+int str_length(char *s)
 {
-	int length = 0;
+	int len = 0;
 
-	while (str[length])
-		length++;
-	return (length);
+	while (s[len])
+		len++;
+	return (len);
 }
 
 /**
@@ -48,19 +48,18 @@ int _strlen(char *str)
 
 char *multiply(char *num1, char *num2)
 {
-	int len1 = _strlen(num1);
-	int len2 = _strlen(num2);
+	int len1 = str_length(num1);
+	int len2 = str_length(num2);
 	int len_result = len1 + len2;
-	int *result = malloc(len_result * sizeof(int));
+	int *result;
 	char *res_str;
 	int i, j, carry, prod, start = 0;
 
+	result = malloc(len_result * sizeof(int));
 	if (!result)
 		return (NULL);
-
 	for (i = 0; i < len_result; i++)
 		result[i] = 0;
-
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
@@ -72,12 +71,9 @@ char *multiply(char *num1, char *num2)
 		}
 		result[i + j + 1] += carry;
 	}
-
 	while (start < len_result - 1 && result[start] == 0)
 		start++;
-
 	res_str = malloc(len_result - start + 1);
-
 	if (!res_str)
 	{
 		free(result);
@@ -103,7 +99,7 @@ int main(int argc, char *argv[])
 {
 	char *result;
 
-	if (argc != 3 || is_digit(argv[1]) == 0 || is_digit(argv[2]) == 0)
+	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 	{
 		printf("Error\n");
 		return (98);
@@ -115,6 +111,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (98);
 	}
+
 	printf("%s\n", result);
 	free(result);
 	return (0);
