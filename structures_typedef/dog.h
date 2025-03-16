@@ -22,5 +22,6 @@ struct dog
 };
 
 void init_dog(struct dog *d, char *, float, char *);
+void print_dog(struct dog *d);
 
 #endif
