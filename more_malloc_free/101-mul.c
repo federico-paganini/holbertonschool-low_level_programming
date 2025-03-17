@@ -27,7 +27,6 @@ int is_digit(char *s)
 int str_length(char *s)
 {
 	int len = 0;
-
 	while (s[len])
 		len++;
 	return (len);
@@ -42,13 +41,22 @@ int str_length(char *s)
  */
 char *multiply(char *num1, char *num2)
 {
-	int len1 = str_length(num1);
-	int len2 = str_length(num2);
-	int len_result = len1 + len2;
-	int *result;
+	int len1 = str_length(num1), len2 = str_length(num2), len_result = len1 + len2;
+	int *result, i, j, carry, prod, start = 0;
 	char *res_str;
-	int i, j, carry, prod, start = 0;
 
+	if ((len1 == 1 && num1[0] == '0') || (len2 == 1 && num2[0] == '0'))
+	{
+		res_str = malloc(2);
+		if (!res_str)
+		{
+			printf("Error\n");
+			return (NULL);
+		}
+		res_str[0] = '0';
+		res_str[1] = '\0';
+		return (res_str);
+	}
 	result = malloc(len_result * sizeof(int));
 	if (!result)
 	{
@@ -106,6 +114,6 @@ int main(int argc, char *argv[])
 		return (98);
 
 	printf("%s\n", result);
-	free(result);
+	free(result);  /* Free the result string */
 	return (0);
 }
