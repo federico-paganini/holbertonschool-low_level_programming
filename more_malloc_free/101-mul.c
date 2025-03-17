@@ -3,7 +3,6 @@
 
 /**
  * is_digit - Checks if a string consists only of digits.
- *
  * @s: The string to check.
  *
  * Return: 1 if all characters are digits, 0 otherwise.
@@ -21,7 +20,6 @@ int is_digit(char *s)
 
 /**
  * str_length - Returns the length of a string.
- *
  * @s: The input string.
  *
  * Return: Length of the string.
@@ -37,7 +35,6 @@ int str_length(char *s)
 
 /**
  * multiply - Multiplies two positive numbers represented as strings.
- *
  * @num1: First number.
  * @num2: Second number.
  *
@@ -54,7 +51,10 @@ char *multiply(char *num1, char *num2)
 
 	result = malloc(len_result * sizeof(int));
 	if (!result)
+	{
+		printf("Error\n");
 		return (NULL);
+	}
 	for (i = 0; i < len_result; i++)
 		result[i] = 0;
 	for (i = len1 - 1; i >= 0; i--)
@@ -74,6 +74,7 @@ char *multiply(char *num1, char *num2)
 	if (!res_str)
 	{
 		free(result);
+		printf("Error\n");
 		return (NULL);
 	}
 	for (i = start, j = 0; i < len_result; i++, j++)
@@ -85,8 +86,7 @@ char *multiply(char *num1, char *num2)
 
 /**
  * main - Entry point, multiplies two positive numbers.
- *
- * @argc: Number of arguments.
+ * @argc: Argument count.
  * @argv: Argument vector.
  *
  * Return: 0 on success, 98 on error.
@@ -103,10 +103,7 @@ int main(int argc, char *argv[])
 
 	result = multiply(argv[1], argv[2]);
 	if (!result)
-	{
-		printf("Error\n");
 		return (98);
-	}
 
 	printf("%s\n", result);
 	free(result);
