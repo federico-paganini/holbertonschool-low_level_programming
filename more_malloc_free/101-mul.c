@@ -27,6 +27,7 @@ int is_digit(char *s)
 int str_length(char *s)
 {
 	int len = 0;
+
 	while (s[len])
 		len++;
 	return (len);
@@ -41,22 +42,13 @@ int str_length(char *s)
  */
 char *multiply(char *num1, char *num2)
 {
-	int len1 = str_length(num1), len2 = str_length(num2), len_result = len1 + len2;
-	int *result, i, j, carry, prod, start = 0;
+	int len1 = str_length(num1);
+	int len2 = str_length(num2);
+	int len_result = len1 + len2;
+	int *result;
 	char *res_str;
+	int i, j, carry, prod, start = 0;
 
-	if ((len1 == 1 && num1[0] == '0') || (len2 == 1 && num2[0] == '0'))
-	{
-		res_str = malloc(2);
-		if (!res_str)
-		{
-			printf("Error\n");
-			return (NULL);
-		}
-		res_str[0] = '0';
-		res_str[1] = '\0';
-		return (res_str);
-	}
 	result = malloc(len_result * sizeof(int));
 	if (!result)
 	{
@@ -94,7 +86,7 @@ char *multiply(char *num1, char *num2)
 
 /**
  * main - Entry point, multiplies two positive numbers.
- * @argc: Argument count.
+ * @argc: Number of arguments.
  * @argv: Argument vector.
  *
  * Return: 0 on success, 98 on error.
@@ -103,17 +95,24 @@ int main(int argc, char *argv[])
 {
 	char *result;
 
+	/* Validate arguments */
 	if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 	{
 		printf("Error\n");
 		return (98);
 	}
 
+	/* Perform multiplication */
 	result = multiply(argv[1], argv[2]);
 	if (!result)
 		return (98);
 
+	/* Print result */
 	printf("%s\n", result);
-	free(result);  /* Free the result string */
+
+	/* Free allocated memory */
+	free(result);
+
 	return (0);
 }
+
