@@ -29,6 +29,7 @@ int is_digit(char *s)
 int str_length(char *s)
 {
 	int len = 0;
+
 	while (s[len])
 		len++;
 	return (len);
