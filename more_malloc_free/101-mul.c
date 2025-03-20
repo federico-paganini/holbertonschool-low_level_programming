@@ -67,7 +67,7 @@ char *multiply(char *num1, char *num2)
 	res_str = malloc(len_result - start + 1);
 	if (!res_str)
 	{
-		free(result);
+		free(res_str);
 		printf("Error\n");
 		return (NULL);
 	}
