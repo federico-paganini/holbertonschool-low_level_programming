@@ -74,7 +74,7 @@ char *multiply(char *num1, char *num2)
 	for (i = start, j = 0; i < 2000; i++, j++)
 		res_str[j] = result[i] + '0';
 	res_str[j] = '\0';
-	free(result);
+
 	return (res_str);
 }
 
