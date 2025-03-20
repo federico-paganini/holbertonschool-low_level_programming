@@ -42,24 +42,33 @@ int str_length(char *s)
  */
 char *multiply(char *num1, char *num2)
 {
-	int len1 = str_length(num1);
-	int len2 = str_length(num2);
-	int result[2000] = {0};
+	int len1 = str_length(num1), len2 = str_length(num2);
+	int result[2000];
 	char *res_str;
-	int i, j, carry, prod, start = 0;
+	int i, j, carry, pos1, pos2, prod, start = 0;
 
+	for (i = 0; i < 2000; i++)
+		result[i] = -1;
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			prod = (num1[i] - '0') * (num2[j] - '0') + result[i + j + 1] + carry;
-			result[i + j + 1] = prod % 10;
+			pos1 = i + j; 
+			pos2 = i + j + 1;
+			if (result[pos2] == -1)
+				result[pos2] = 0;
+			
+			prod = (num1[i] - '0') * (num2[j] - '0') + result[pos2] + carry;
+			result[pos2] = prod % 10;
 			carry = prod / 10;
 		}
+		
+		if (result[i + j + 1] == -1)
+			result[i + j + 1] = 0;
 		result[i + j + 1] += carry;
 	}
-	while (start < 2000 - 1 && result[start] == 0)
+	while (start < 2000 - 1 && result[start] == -1)
 		start++;
 	res_str = malloc(2001 - start);
 	if (!res_str)
