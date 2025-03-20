@@ -44,7 +44,6 @@ char *multiply(char *num1, char *num2)
 {
 	int len1 = str_length(num1);
 	int len2 = str_length(num2);
-	int len_result = len1 + len2;
 	int result[2000] = {0};
 	char *res_str;
 	int i, j, carry, prod, start = 0;
