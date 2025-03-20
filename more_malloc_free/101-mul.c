@@ -45,12 +45,10 @@ char *multiply(char *num1, char *num2)
 	int len1 = str_length(num1);
 	int len2 = str_length(num2);
 	int len_result = len1 + len2;
-	int result[2000];
+	int result[2000] = {0};
 	char *res_str;
 	int i, j, carry, prod, start = 0;
 
-	for (i = 0; i < 2000; i++)
-		result[i] = '%';
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
@@ -62,12 +60,11 @@ char *multiply(char *num1, char *num2)
 		}
 		result[i + j + 1] += carry;
 	}
-	while (start < 2000 - 1 && result[start] == '%')
+	while (start < 2000 - 1 && result[start] == 0)
 		start++;
-	res_str = malloc(len_result - start + 1);
+	res_str = malloc(2001 - start);
 	if (!res_str)
 	{
-		free(res_str);
 		printf("Error\n");
 		return (NULL);
 	}
