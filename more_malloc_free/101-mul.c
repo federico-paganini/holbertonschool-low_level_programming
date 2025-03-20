@@ -62,7 +62,7 @@ char *multiply(char *num1, char *num2)
 		}
 		result[i + j + 1] += carry;
 	}
-	while (start < 2000 - 1 && result[start] == %)
+	while (start < 2000 - 1 && result[start] == '%')
 		start++;
 	res_str = malloc(len_result - start + 1);
 	if (!res_str)
