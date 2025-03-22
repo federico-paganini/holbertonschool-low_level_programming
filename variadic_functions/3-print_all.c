@@ -46,7 +46,22 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	putchar('\n');
+	print_n(chk);
+}
+
+/**
+ * print_n - Prints a new line if is necessary.
+ *
+ * @chk: Checks if something was printed.
+ */
+
+void print_n(int chk)
+{
+	while (chk >= 0)
+	{
+		putchar('\n');
+		chk = -1;
+	}
 }
 
 /**
