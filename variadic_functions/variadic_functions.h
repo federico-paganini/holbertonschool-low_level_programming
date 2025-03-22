@@ -6,7 +6,24 @@
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
-void print_all(const char * const format, ...);
+
+/**
+ * struct options - Struct options.
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+
+typedef struct options
+{
+	char op;
+	void (*f)(va_list *arg);
+} options_f;
+
+void print_char(va_list *arg);
+void print_int(va_list *arg);
+void print_float(va_list *arg);
+void print_string(va_list *arg);
 
 /**
  * get_op_func - Selects the correct function to print.
@@ -34,22 +51,6 @@ void (*get_op_func(char s))(va_list *)
 	return (opt[i].f);
 }
 
-void print_char(va_list *arg);
-void print_int(va_list *arg);
-void print_float(va_list *arg);
-void print_string(va_list *arg);
-
-/**
- * struct options - Struct options.
- *
- * @op: The operator
- * @f: The function associated
- */
-
-typedef struct options
-{
-	char op;
-	void (*f)(va_list *arg);
-} options_f;
+void print_all(const char * const format, ...);
 
 #endif
