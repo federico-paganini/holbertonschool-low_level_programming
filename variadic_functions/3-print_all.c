@@ -10,7 +10,7 @@
 
 void print_all(const char * const format, ...)
 {
-	int i = 0, valid = 0, chkprnt = 0;
+	int i = 0, valid = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -21,22 +21,18 @@ void print_all(const char * const format, ...)
 			case 'c':
 				putchar(va_arg(args, int));
 				valid = 1;
-				chkprnt = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
 				valid = 1;
-				chkprnt = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
 				valid = 1;
-				chkprnt = 1;
 				break;
 			case 's':
 				print_string(&args);
 				valid = 1;
-				chkprnt = 1;
 				break;
 			default:
 				valid = 0;
@@ -46,22 +42,7 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	print_n(chkprnt);
-}
-
-/**
- * print_n - Prints a new line if is necessary.
- *
- * @chk: Checks if something was printed.
- */
-
-void print_n(int chk)
-{
-	while (chk >= 0)
-	{
-		putchar('\n');
-		chk = -1;
-	}
+	putchar('\n');
 }
 
 /**
