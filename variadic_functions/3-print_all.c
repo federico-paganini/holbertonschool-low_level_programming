@@ -46,7 +46,7 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	print_n(chk);
+	print_n(chkprnt);
 }
 
 /**
