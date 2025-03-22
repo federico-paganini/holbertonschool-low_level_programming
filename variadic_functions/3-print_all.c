@@ -3,62 +3,65 @@
 #include <stdio.h>
 
 /**
- * print_all - Prints anything..
+ * print_all - Prints anything.
  *
  * @format: Format of arguments.
  */
 
 void print_all(const char * const format, ...)
 {
-	int i = 0;
+	int i = 0, valid = 0, chkprnt = 0;
 	va_list args;
 
 	va_start(args, format);
-
-	while (format[i] != '\0' && format[i + 1] != '\0')
+	while (format && format[i] != '\0')
 	{
-		if (get_op_func(format[i]))
+		switch (format[i])
 		{
-			get_op_func(format[i])(&args);
-			printf(", ");
+			case 'c':
+				putchar(va_arg(args, int));
+				valid = 1;
+				chkprnt = 1;
+				break;
+			case 'i':
+				printf("%d", va_arg(args, int));
+				valid = 1;
+				chkprnt = 1;
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				valid = 1;
+				chkprnt = 1;
+				break;
+			case 's':
+				print_string(&args);
+				valid = 1;
+				chkprnt = 1;
+				break;
+			default:
+				valid = 0;
+				break;
 		}
+		if (format[i + 1] != '\0' && valid)
+			printf(", ");
 		i++;
 	}
-	get_op_func(format[i])(&args);
-	putchar('\n');
+	print_n(chkprnt);
 }
 
 /**
- * print_char - Prints a simple char.
+ * print_n - Prints a new line if is necessary.
  *
- * @arg: Char recived.
+ * @chk: Checks if something was printed.
  */
 
-void print_char(va_list *arg)
+void print_n(int chk)
 {
-	putchar(va_arg(*arg, int));
-}
-
-/**
- * print_int - Prints an int.
- *
- * @arg: Int recived.
- */
-
-void print_int(va_list *arg)
-{
-	printf("%d", va_arg(*arg, int));
-}
-
-/**
- * print_float - Prints a float number.
- *
- * @arg: Float recived.
- */
-
-void print_float(va_list *arg)
-{
-	printf("%f", va_arg(*arg, double));
+	while (chk > 0)
+	{
+		putchar('\n');
+		chk--;
+	}
 }
 
 /**
