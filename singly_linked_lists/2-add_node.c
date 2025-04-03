@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * list_t *add_node(list_t **head, const char *str)
+ * add_node - Adds a node to the start of a list.
  *
  * @head: Pointer to the first list item.
  * @str: String to add to the list.
