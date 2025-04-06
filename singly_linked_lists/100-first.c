@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * first - function that runs before main
+ * print_before - function that runs before main
  */
 
 __attribute__((constructor))
