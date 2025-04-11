@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * print_binary - Prints the binary representation of a number
@@ -8,12 +9,12 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int bits = sizeof(num) * 8;
-	int i = 0, leading = 1, count = 0;
+	unsigned long int bits = sizeof(n) * 8;
+	int i, leading = 1;
 
 	for (i = bits - 1; i >= 0; i--)
 	{
-		if (num & (1 << i))
+		if (n & (1UL << i))
 		{
 			leading = 0;
 			write(1, "1", 1);
