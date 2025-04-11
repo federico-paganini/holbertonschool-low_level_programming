@@ -27,6 +27,4 @@ void print_binary(unsigned long int n)
 
 	if (leading)
 		write(1, "0", 1);
-
-	write(1, "\n", 1);
 }
