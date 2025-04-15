@@ -43,7 +43,7 @@ void copy_file_content(char *filename1, char *filename2)
 	while ((rbytes = read(fd1, buffer, (sizeof(buffer)))) > 0)
 	{
 		wbytes = write(fd2, buffer, rbytes);
-		if (wbytes != rbytes)
+		if (wbytes != rbytes || wbytes == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
 			close_fd(fd1);
