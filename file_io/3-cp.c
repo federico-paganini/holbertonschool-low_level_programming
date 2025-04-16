@@ -40,7 +40,7 @@ void copy_file_content(char *filename1, char *filename2)
 	char buffer[1024];
 	ssize_t rbytes, wbytes;
 
-	while ((rbytes = read(fd1, buffer, (sizeof(buffer)))) > 0)
+	while ((rbytes = read(fd1, buffer, 1024)) > 0)
 	{
 		wbytes = write(fd2, buffer, rbytes);
 		if (wbytes != rbytes || wbytes == -1)
