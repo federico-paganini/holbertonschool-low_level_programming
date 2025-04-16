@@ -45,8 +45,6 @@ void copy_file_content(char *filename1, char *filename2)
 		if (write(fd2, buffer, rbytes) != rbytes || fd1 == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
-			close_fd(fd1);
-			close_fd(fd2);
 			exit(99);
 		}
 	}
@@ -54,8 +52,6 @@ void copy_file_content(char *filename1, char *filename2)
 	if (rbytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename1);
-		close_fd(fd1);
-		close_fd(fd2);
 		exit(98);
 	}
 
