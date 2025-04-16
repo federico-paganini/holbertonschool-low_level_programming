@@ -38,7 +38,7 @@ void copy_file_content(char *filename1, char *filename2)
 	int fd1 = open(filename1, O_RDONLY);
 	int fd2 = open(filename2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	char buffer[1024];
-	ssize_t rbytes, wbytes;
+	ssize_t rbytes;
 
 	while ((rbytes = read(fd1, buffer, 1024)) > 0)
 	{
